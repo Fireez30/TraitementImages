@@ -1,0 +1,45 @@
+# ifndef IMAGE_PPM
+ # define IMAGE_PPM
+ # include < iostream >
+# include < stdlib .h >
+ # include < stdio .h >
+ include < string .h >
+ # include < math .h >
+
+
+ class Image {
+ public :
+ unsigned short * img;
+ 
+ int borneX;
+ int borneY;
+ int borneZ;
+ 
+ Image (int x,int y,int z){
+ borneX = x;
+ borneY = y;
+ borneZ = z;
+ }
+ 
+ unsigned shot getValeur(int x,int y, int z){
+  return img[x][y][z];
+ }
+ 
+ void setValeur(int x,int y,int z ,unsigned short valeur){
+  img[x][y][z] = valeur;
+ }
+ 
+ unsigned short getValeurMin(){
+ unsigned short min = img[0][0][0];
+ for (int x = 0; x < borneX; x++)
+  for (int y = 0; y < borneY;y++)
+    for (int z = 0; z < borneZ;z++)
+   {
+   if img[x][y][z] < min;
+   {
+   min =  img[x][y][z];
+   }
+   
+   return min;
+   }
+   }
